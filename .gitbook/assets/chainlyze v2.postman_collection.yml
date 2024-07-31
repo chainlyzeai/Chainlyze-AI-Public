@@ -1,0 +1,133 @@
+openapi: 3.0.0
+info:
+  title: chainlyze-v2
+  version: 1.0.0
+servers:
+  - url: http://{{base-url}}
+tags:
+  - name: balances
+  - name: balances > positions
+  - name: balances > wallet
+  - name: transaction
+  - name: chain
+paths:
+  /p/balance/defi-position/list:
+    get:
+      tags:
+        - balances > positions
+      summary: Get position balances
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: '{{api-key}}'
+        - name: address
+          in: query
+          schema:
+            type: string
+          example: '0xd8da6bf26964af9d7eed9e03e53415d37aa96045'
+        - name: page[size]
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: page[index]
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /p/balance/token/list:
+    get:
+      tags:
+        - balances > wallet
+      summary: Get wallet balances
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: '{{api-key}}'
+        - name: address
+          in: query
+          schema:
+            type: string
+          example: '0xd8da6bf26964af9d7eed9e03e53415d37aa96045'
+        - name: page[size]
+          in: query
+          schema:
+            type: integer
+          example: '50'
+        - name: page[index]
+          in: query
+          schema:
+            type: integer
+          example: '20'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /p/transaction/list:
+    get:
+      tags:
+        - transaction
+      summary: List transactions
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: '{{api-key}}'
+        - name: cursor[limit]
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: address
+          in: query
+          schema:
+            type: string
+          example: '0xd8da6bf26964af9d7eed9e03e53415d37aa96045'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /p/chain/list:
+    get:
+      tags:
+        - chain
+      summary: List chains
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: '{{api-key}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /p/ping:
+    get:
+      tags:
+        - default
+      summary: Ping
+      parameters:
+        - name: x-api-key
+          in: header
+          schema:
+            type: string
+          example: '{{api-key}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
