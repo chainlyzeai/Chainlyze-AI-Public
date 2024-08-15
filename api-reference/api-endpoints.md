@@ -4,8 +4,8 @@
 
 This endpoint retrieves the API endpoint status.
 
-{% swagger src="../.gitbook/assets/chainlyze v2.postman_collection.yml" path="/p/ping" method="get" %}
-[chainlyze v2.postman_collection.yml](<../.gitbook/assets/chainlyze v2.postman_collection.yml>)
+{% swagger src="../.gitbook/assets/openapi_collection.yml" path="/p/ping" method="get" %}
+[openapi_collection.yml](../.gitbook/assets/openapi_collection.yml)
 {% endswagger %}
 
 ***
@@ -14,8 +14,8 @@ This endpoint retrieves the API endpoint status.
 
 This endpoint retrieves the list of supported crypto networks.
 
-{% swagger src="../.gitbook/assets/chainlyze v2.postman_collection.yml" path="/p/chain/list" method="get" %}
-[chainlyze v2.postman_collection.yml](<../.gitbook/assets/chainlyze v2.postman_collection.yml>)
+{% swagger src="../.gitbook/assets/openapi_collection.yml" path="/p/chain/list" method="get" %}
+[openapi_collection.yml](../.gitbook/assets/openapi_collection.yml)
 {% endswagger %}
 
 ***
@@ -24,8 +24,8 @@ This endpoint retrieves the list of supported crypto networks.
 
 This endpoint retrieves the wallet token balances
 
-{% swagger src="../.gitbook/assets/chainlyze v2.postman_collection.yml" path="/p/balance/token/list" method="get" %}
-[chainlyze v2.postman_collection.yml](<../.gitbook/assets/chainlyze v2.postman_collection.yml>)
+{% swagger src="../.gitbook/assets/openapi_collection.yml" path="/p/balance/token/list" method="get" %}
+[openapi_collection.yml](../.gitbook/assets/openapi_collection.yml)
 {% endswagger %}
 
 ***
@@ -34,8 +34,8 @@ This endpoint retrieves the wallet token balances
 
 This endpoint retrieves the DeFi position of a specific wallet
 
-{% swagger src="../.gitbook/assets/chainlyze v2.postman_collection.yml" path="/p/balance/defi-position/list" method="get" %}
-[chainlyze v2.postman_collection.yml](<../.gitbook/assets/chainlyze v2.postman_collection.yml>)
+{% swagger src="../.gitbook/assets/openapi_collection.yml" path="/p/balance/defi-position/list" method="get" %}
+[openapi_collection.yml](../.gitbook/assets/openapi_collection.yml)
 {% endswagger %}
 
 ***
@@ -44,7 +44,7 @@ This endpoint retrieves the DeFi position of a specific wallet
 
 This endpoints retrieves the transaction history of a specific wallet
 
-{% swagger src="../.gitbook/assets/chainlyze v2.postman_collection.yml" path="/p/transaction/list" method="get" %}
-[chainlyze v2.postman_collection.yml](<../.gitbook/assets/chainlyze v2.postman_collection.yml>)
+{% swagger src="../.gitbook/assets/openapi_collection.yml" path="/p/transaction/list" method="get" %}
+[openapi_collection.yml](../.gitbook/assets/openapi_collection.yml)
 {% endswagger %}
 

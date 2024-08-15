@@ -25,4 +25,4 @@
 
 * [Getting Started](api-reference/getting-started.md)
 * [API Endpoints](api-reference/api-endpoints.md)
-* [Specification](https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FgIEDrPXaIi7XoYANQ7gF%2Fimports%2FddnObMC7Ru8twUHDmbGs%2Fchainlyze-v2.postman\_collection.yml?alt=media\&token=cee842d0-14fa-4db3-8560-75dd4d7775c3)
+* [Specification](https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FgIEDrPXaIi7XoYANQ7gF%2Fimports%2FpLm0DaDRdTAUBC1BPH4s%2Fopenapi\_collection.yml?alt=media\&token=65f4ee68-1b12-4247-9724-9e0343ad4119)

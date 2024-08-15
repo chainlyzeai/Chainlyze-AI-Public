@@ -1,0 +1,315 @@
+openapi: 3.0.0
+info:
+  title: chainlyze-v2
+  version: 1.0.0
+servers:
+  - url: https://api.chainlyze.ceylabs.io/v2
+tags:
+  - name: balances
+  - name: balances > positions
+  - name: balances > wallet
+  - name: transaction
+  - name: chain
+  - name: status
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: API key needed to access the endpoints
+  parameters:
+    ApiKeyHeader:
+      name: x-api-key
+      in: header
+      description: API key needed to access the endpoint
+      required: true
+      schema:
+        type: string
+        example: "your-api-key"
+    AddressParam:
+      name: address
+      in: query
+      description: The wallet address to retrieve data for.
+      required: true
+      schema:
+        type: string
+        example: "0x1234567890abcdef1234567890abcdef12345678"
+    PageSizeParam:
+      name: page[size]
+      in: query
+      description: The number of results to return per page.
+      schema:
+        type: integer
+        example: 50
+    PageIndexParam:
+      name: page[index]
+      in: query
+      description: The page number to retrieve. Starts from 0.
+      schema:
+        type: integer
+        example: 0
+    CursorHashParam:
+      name: cursor[hash]
+      in: query
+      description: The cursor hash to retrieve the next page of results.
+      schema:
+        type: string
+        example: "2abc3def4ghi5jkl6mno7pqr8stu9vwx0yzab"
+    CursorLimitParam:
+      name: cursor[limit]
+      in: query
+      description: The maximum number of results to return in the response.
+      schema:
+        type: integer
+        example: 10
+  schemas:
+    Chain:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "30000000-0000-0000-0000-000000000001"
+        name:
+          type: string
+          example: "Ethereum"
+        short_name:
+          type: string
+          example: "ETH"
+        native_token:
+          type: string
+          example: "ethereum"
+        evm_chain_id:
+          type: integer
+          example: 1
+        is_testnet:
+          type: boolean
+          example: false
+        is_supported:
+          type: boolean
+          example: true
+        coingecko_id:
+          type: string
+          example: "ethereum"
+        explorer:
+          type: string
+          example: "https://etherscan.io"
+    Transfer:
+      type: object
+      properties:
+        quantity:
+          type: string
+          example: "1000000.00000000"
+        direction:
+          type: string
+          example: "in"
+        symbol:
+          type: string
+          example: "USDT"
+        price:
+          type: number
+          format: float
+          example: 1.00000000
+        type:
+          type: string
+          example: "ERC20"
+        contract_address:
+          type: string
+          example: "0xabcdef1234567890abcdef1234567890abcdef12"
+    WalletBalance:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Chainlink"
+        symbol:
+          type: string
+          example: "LINK"
+        balance:
+          type: string
+          example: "10.00000000"
+        price:
+          type: number
+          format: float
+          example: 7.50
+        icon:
+          type: string
+          example: "https://cdn.chainlyze.io/logos/chainlink-link-logo.png"
+        chain_id:
+          type: string
+          example: "ethereum"
+        changes:
+          type: object
+          properties:
+            absolute:
+              type: number
+              format: float
+              example: 0.50
+            percent:
+              type: number
+              format: float
+              example: 7.15
+    Position:
+      type: object
+      properties:
+        protocol:
+          type: string
+          example: "Uniswap V3"
+        name:
+          type: string
+          example: "Uniswap V3 ETH/WETH Pool"
+        position_type:
+          type: string
+          example: "deposit"
+        amount:
+          type: string
+          example: "0.12345"
+        price:
+          type: number
+          format: float
+          example: 3355.123
+        icon:
+          type: string
+          example: "https://cdn.chainlyze.io/0x1234567890abcdef1234567890abcdef12345678.png"
+        chain_id:
+          type: string
+          example: "ethereum"
+    PositionResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Position'
+    WalletBalanceResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/WalletBalance'
+    Transaction:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          example: "2024-07-31T13:01:27Z"
+        txId:
+          type: string
+          example: "0x1a2b3c4d5e6f7890abcdef1234567890abcdef1234567890abcdef1234567890a"
+        chain:
+          type: string
+          example: "ethereum"
+        method:
+          type: string
+          example: "receive"
+        trash:
+          type: boolean
+          example: false
+        from:
+          type: string
+          example: "0x1234567890abcdef1234567890abcdef12345678"
+        to:
+          type: string
+          example: "0xabcdef1234567890abcdef1234567890abcdef12"
+        transfers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Transfer'
+    TransactionResponse:
+      type: object
+      properties:
+        cursor:
+          type: object
+          properties:
+            hash:
+              type: string
+              example: "0xb1c2d3e4f5678901abcdef2345678901abcdef2345678901abcdef2345678901b"
+            limit:
+              type: integer
+              example: 10
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Transaction'
+paths:
+  /p/balance/defi-position/list:
+    get:
+      tags:
+        - balances > positions
+      summary: Get position balances
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
+        - $ref: '#/components/parameters/AddressParam'
+        - $ref: '#/components/parameters/PageSizeParam'
+        - $ref: '#/components/parameters/PageIndexParam'
+      responses:
+        '200':
+          description: Successful response with position balances
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PositionResponse'
+  /p/balance/token/list:
+    get:
+      tags:
+        - balances > wallet
+      summary: Get wallet balances
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
+        - $ref: '#/components/parameters/AddressParam'
+        - $ref: '#/components/parameters/PageSizeParam'
+        - $ref: '#/components/parameters/PageIndexParam'
+      responses:
+        '200':
+          description: Successful response with wallet balances
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WalletBalanceResponse'
+  /p/transaction/list:
+    get:
+      tags:
+        - transaction
+      summary: List transactions
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
+        - $ref: '#/components/parameters/AddressParam'
+        - $ref: '#/components/parameters/CursorLimitParam'
+        - $ref: '#/components/parameters/CursorHashParam'
+      responses:
+        '200':
+          description: Successful response with transaction data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionResponse'
+  /p/chain/list:
+    get:
+      tags:
+        - chain
+      summary: List chains
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
+      responses:
+        '200':
+          description: Successful response with list of chains
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Chain'
+  /p/ping:
+    get:
+      tags:
+        - status
+      summary: API Status
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: "Welcome to Chainlyze API V2"
