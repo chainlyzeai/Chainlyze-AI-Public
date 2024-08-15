@@ -2,7 +2,7 @@
 description: Introduction
 ---
 
-# ✒️ What is Chainlyze
+# ⛓️ Introducing Chainlyze
 
 **About Chainlyze**
 
