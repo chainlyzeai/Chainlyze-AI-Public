@@ -1,4 +1,4 @@
-# API Endpoints
+# 📡 API Endpoints
 
 ## API Status
 

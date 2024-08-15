@@ -5,7 +5,7 @@ description: >-
   the API.
 ---
 
-# Getting Started
+# 🧵 Getting Started
 
 ## Authentication
 

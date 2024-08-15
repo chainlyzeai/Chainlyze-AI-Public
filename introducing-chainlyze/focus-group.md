@@ -2,7 +2,7 @@
 description: Chainlyze Audience
 ---
 
-# 🧑‍🤝‍🧑 Target Audience
+# 👫 Focus Group
 
 Chainlyze is built for anyone who needs a detailed and actionable view of blockchain activity. This includes:
 

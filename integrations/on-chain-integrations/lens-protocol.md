@@ -1,4 +1,4 @@
-# 🍃 Integration with Lens Protocol
+# 🍀 Lens Protocol
 
 Chainlyze integrates seamlessly with Lens Protocol, leveraging its decentralized social graph capabilities built on the Ethereum blockchain. This integration enables a deeper analysis of blockchain-based social interactions by accessing detailed user profile information directly through our platform.
 

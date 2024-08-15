@@ -2,7 +2,7 @@
 description: Next generation Web
 ---
 
-# 🔎 What is Web3.0
+# 🕸️ Decentralised Web (WEB3.0)
 
 
 

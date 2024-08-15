@@ -1,4 +1,4 @@
-# ⏩ Integration with Ethereum Name Service (ENS)
+# 💎 ENS
 
 Chainlyze integrates seamlessly with Ethereum Name Service (ENS), enhancing the usability of our platform by allowing users to interact with blockchain addresses through human-readable names. This integration simplifies the process of identifying and analyzing wallet addresses by replacing or supplementing traditional hexadecimal addresses with more memorable and meaningful names.
 
