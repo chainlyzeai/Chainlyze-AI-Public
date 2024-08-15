@@ -1,3 +1,7 @@
+---
+description: Real-Time On-Chain Intelligence Service
+---
+
 # ✒️ Prologue
 
 In an era where blockchain technology is revolutionizing finance, security, and digital interaction, the need for clarity and insight into its vast and intricate networks has become paramount. Enter Chainlyze, a groundbreaking platform designed to bridge the gap between complexity and understanding in the blockchain space.

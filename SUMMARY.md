@@ -4,7 +4,7 @@
 
 ## 🔗 Introducing Chainlyze
 
-* [🕸️ Decentralised Web (WEB3.0)](introducing-chainlyze/decentralised-web.md)
+* [🕸️ Decentralized Web (WEB3.0)](introducing-chainlyze/decentralized-web.md)
 * [⛓️ Chainlyze](introducing-chainlyze/chainlyze.md)
 * [👫 Focus Group](introducing-chainlyze/focus-group.md)
 
