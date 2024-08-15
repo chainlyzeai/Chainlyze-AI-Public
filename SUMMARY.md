@@ -1,8 +1,8 @@
 # Table of contents
 
-## ⛓️ Introduction
+## ✒️ Introduction
 
-* [🏡 Introduction to Chainlyze](README.md)
+* [✒️ What is Chainlyze](README.md)
 * [🔎 What is Web3.0](introduction/what-is-web3.0.md)
 * [🧑‍🤝‍🧑 Target Audience](introduction/target-audience.md)
 
